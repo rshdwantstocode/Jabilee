@@ -215,18 +215,12 @@ a{
 }
 
 @media (max-width: 1348px) {
-    body{
-        background-color: aqua;
-    }
     .menuList-container{
         width: 87vw;
     }
 }
 
 @media (max-width: 1239px) {
-    body{
-        background-color: pink;
-    }
     .menuList-container{
         width: 87vw;
     }

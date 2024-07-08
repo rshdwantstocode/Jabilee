@@ -1,0 +1,34 @@
+<%- include('./menu-header.ejs') %>
+
+<% const menuCategories = locals.products %>
+
+<body>   
+    <div class="pt-4">
+        <div class="container outer-menu-container">
+
+            <% if (menuCategories) { %>
+                <% menuCategories.data.forEach(jabeeMenu => { %> 
+                    <div class="menu-container">
+                        <img src="<%= jabeeMenu.image %>" alt="<%= jabeeMenu.param %>">
+                        <div class="menu-title"><h4><%= jabeeMenu.category %></h4></div>
+                        <div class="menu-select">
+                            <form action="/MenuList" method="post">
+                                <!-- <h5 style="color: white;">SELECT</h5> -->
+                                <input type="hidden" name="titleMenu" value="<%= jabeeMenu.category %>">
+                                <button type="submit" class="category-button-select">SELECT</button>
+                                <input type="hidden" name="itemChoice" value="<%= jabeeMenu.param %>">
+                            </form>
+                        </div>
+                    </div> 
+            <% });%>   
+        <% } %>
+
+        </div>
+    </div>
+
+    <%- include('../footer.ejs') %>
+
+
+
+
+

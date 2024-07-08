@@ -1,0 +1,74 @@
+<%- include('./menu-header.ejs') %>
+
+<% const menuItems = locals.products %>
+<% const productItems = locals.productItems %>
+
+<body>
+    <div class="container menuList-container">
+        <div class="sidebar-container">
+            <div class="sidebar sticky-top">
+            <% if (menuItems) { %>
+                <% menuItems.data.forEach(jabeeMenu => { %> 
+                    <% if (jabeeMenu.category === itemTitle) {   %>
+                        <div class="menu-item active">
+                            <form action="/MenuList" method="post">
+                                <input type="hidden" name="itemChoice" value="<%= jabeeMenu.param %>">
+                                <input type="hidden" name="titleMenu" value="<%= jabeeMenu.category %>">
+                                    <button class="button-submit" type="submit">
+                                        <span><%= jabeeMenu.category %></span>
+                                            <span class="arrow"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right" viewBox="0 0 16 16">
+                                        <path d="M6 12.796V3.204L11.481 8zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753"/>
+                                    </svg></span>
+                                    </button>
+                            </form>
+                        </div>
+                    <% } else { %>
+                        <div class="menu-item">
+                            <form action="/MenuList" method="post">
+                                <input type="hidden" name="itemChoice" value="<%= jabeeMenu.param %>">
+                                <input type="hidden" name="titleMenu" value="<%= jabeeMenu.category %>">
+                                    <button class="button-submit" type="submit">
+                                        <span><%= jabeeMenu.category %></span>
+                                            <span class="arrow"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right" viewBox="0 0 16 16">
+                                        <path d="M6 12.796V3.204L11.481 8zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753"/>
+                                    </svg></span>
+                                    </button>
+                            </form>
+                        </div>
+                        <% }  %>
+                <% });%>  
+            <% } %>
+            </div>
+        </div>
+
+        <div class="menuItem-container">
+        <div class="item-category">
+            <form action="/Menu" method="get">
+                <button type="submit" class="left-arrow"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/>
+                </svg></button>
+            </form>
+            <h2><%= itemTitle %></h2>
+        </div>
+
+            <div class="container outer-container-menulist">
+                <% if (productItems) {  %>
+                    <% productItems.data.forEach( categoryItem => {%>
+                        
+                        <div class="inner-item-container-menuList">
+                            <img src="<%= categoryItem.img %>" alt="<%= categoryItem.description  %>">
+                            <div class="item-price-title bg-danger">
+                                <p class="fw-bold"><%= categoryItem.description %></p>
+                                <p>Price Starts at <%= categoryItem.price %></p>
+                            </div>
+                        </div>
+
+                        <% }); %>
+                <%  } %>
+            </div>
+
+            
+        </div>
+    </div>
+
+    <%- include('../footer.ejs') %>

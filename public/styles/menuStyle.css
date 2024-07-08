@@ -1,0 +1,224 @@
+body{
+    height: auto;
+    margin: 0;
+    padding: 0;
+    background-color: #FBFADA;
+}
+
+a{
+    text-decoration: none;
+    color: beige;
+}
+
+.outer-menu-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.menu-container{
+    width: 280px;
+    height: 300px;
+    background-color: white;
+    text-align: center;
+    border-radius: 10px 10px 0 0;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin-bottom: 50px;
+}   
+
+.menu-container > img {
+    margin-top: 50px;
+    width: 250px;
+    height: 180px;
+}
+
+.menu-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 71px;
+
+}
+
+.menu-title > h4 {
+    font-family: 'Nunito' ,Arial, sans-serif;
+    font-weight: 800;
+    line-height: 20px;
+}
+
+.menu-select{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 55px;
+    border-radius: 0 0 10px  10px;
+    background-color: red;
+    cursor: pointer;
+}
+
+.menu-select:hover, .category-button-select:hover{
+    background-color: rgb(197, 45, 45);
+}
+
+.category-button-select{
+    width: 250px;
+    height: 55px;
+    border: none;
+    background-color: red;
+    color: white;
+}
+
+
+/* -----------------------Menu List--------------------------------- */
+
+.sidebar-container{
+    width: 250px;
+
+    z-index: 1;
+}
+
+.sidebar {
+    font-family: 'Nunito' ,Arial, sans-serif;
+    width: 220px;
+    background-color: #f8f8f8;
+    border-right: 1px solid #ddd;
+    margin-top: 70px;
+    height: auto;
+}
+
+.menu-item {
+    padding: 15px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    border-bottom: 1px solid #ddd;
+    background-color: white;
+}
+
+.menu-item.active {
+    background-color: white;
+    color: red;
+    font-weight: bold;
+    border-left: 3px solid red;
+}
+
+.menu-item .arrow {
+    font-weight: bold;
+}
+
+.menu-item:hover {
+    color: red;
+}
+
+.menuList-container{
+    font-family: 'Nunito' ,Arial, sans-serif;
+    width: 80vw;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.inner-item-container-menuList{
+    width: 280px;
+    height: 270px;
+    background-color: white;
+    border-radius: 5px 5px 0 0;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+.inner-item-container-menuList > img {
+    width:  180px;
+    height: 150px;
+}
+
+.item-price-title{
+    height: 100px;
+    line-height: normal;
+    padding-top: 10px;
+    width: 100%;
+    color: #ddd;
+    padding: 10px  10px 0 10px;
+    /* text-align: center; */
+}
+
+.item-price-title>p{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    /* padding: 0 10px 0 10px; */
+}
+
+.outer-container-menulist{
+    height: auto;
+    /* width: 60vw; */
+    display: flex;
+    /* justify-content: flex-start; */
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.menuItem-container{
+    width: 1000px;
+    display: flex;
+    flex-direction: column;
+}
+
+.item-category{
+    display: flex;
+    align-items: center;
+    margin: 30px 0 30px 15px;
+    background-color: white;
+    padding-left: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    height: 60px;
+    gap: 20px;
+}
+
+.left-arrow{
+    background-color: white;
+    border: none;
+    height: 50px;
+}
+
+.button-submit{
+    width: 200px;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border: none;
+    background-color: white;
+    font-weight: 800;
+}
+
+/* Media queries */
+
+@media (max-width: 1466px) {
+    .inner-item-container-menuList{
+        width: 250px;
+        height: 300px;
+    }
+    .item-price-title{
+        height: 130px;
+    }
+}
+
+@media (max-width: 1348px) {
+    body{
+        background-color: aqua;
+    }
+    .menuList-container{
+        width: 87vw;
+    }
+}
